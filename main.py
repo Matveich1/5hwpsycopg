@@ -103,8 +103,8 @@ def delete_client(conn, client_id):
         conn.commit()
 
 
-def find_client(conn, first_name=None, last_name=None,
-                email=None, number=None):
+def find_client(conn, first_name='%', last_name='%',
+                email='%', number='%'):
     with conn.cursor() as cur:
         cur.execute('''
                     SELECT first_name, last_name, email, number
